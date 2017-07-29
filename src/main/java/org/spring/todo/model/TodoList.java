@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class List {
+public class TodoList {
 	
 	@Id
 	private int id;
