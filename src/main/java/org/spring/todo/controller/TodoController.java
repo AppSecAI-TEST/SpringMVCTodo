@@ -17,9 +17,8 @@ public class TodoController {
 	@Autowired
 	private ListService listService;
 
-	private TodoList todoList;
 	
-	@RequestMapping("viewtodo")
+	@RequestMapping("view")
 	public String showList(){
 		logger.info("Method showList()");
 //	Session session = sf.getCurrentSession();
@@ -27,12 +26,14 @@ public class TodoController {
 		
 	}
 	
-	@RequestMapping(value="viewtodo" ,method = RequestMethod.POST)
-	public void addList(){
-		
-		todoList = null;
+	@RequestMapping(value="viewtodo" ,method = RequestMethod.GET)
+	public String save(){
+		logger.info("Method show() start");
+		TodoList todoList = new TodoList(); 
 		todoList.setContent("get milk yo");
 		todoList.setFlag(true);
 		listService.save(todoList);
+		logger.info("Method show() end");
+		return "home";
 	}
 }
