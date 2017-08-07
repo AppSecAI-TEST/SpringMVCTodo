@@ -1,7 +1,5 @@
 package org.spring.todo.dao;
 
-import java.util.List;
-
 import org.spring.todo.model.TodoList;
 import org.springframework.stereotype.Repository;
 
@@ -9,23 +7,9 @@ import org.springframework.stereotype.Repository;
 public class ListDAOImpl implements ListDAO {
 
 	@Override
-	public List<TodoList> getAll() {
+	public TodoList save(TodoList todoList) {
 		return null;
 	}
 
-	@Override
-	public void addList(TodoList list) {
-
-	}
-
-	@Override
-	public void deleteList(int id) {
-
-	}
-
-	@Override
-	public void updateList(int id) {
-
-	}
-
+	
 }

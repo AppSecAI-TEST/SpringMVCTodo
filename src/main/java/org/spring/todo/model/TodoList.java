@@ -1,14 +1,25 @@
 package org.spring.todo.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="LIST")
 public class TodoList {
 	
-	private String content;
+	
 	@Id
+	@Column(name="LIST_ID")
+	@GeneratedValue
 	private int id;
+	
+	@Column(name="DATA")
+	private String content;
+	
+	@Column(name="FLAG")
 	private boolean isFlag;
 	
 	public String getContent() {

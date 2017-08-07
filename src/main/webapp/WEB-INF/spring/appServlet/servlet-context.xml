@@ -51,7 +51,10 @@
 		class="org.springframework.orm.jpa.JpaTransactionManager">
 		<beans:property name="entityManagerFactory" ref="entityManagerFactory" />
 	</beans:bean>
+	
 	<context:component-scan base-package="org.spring.todo.controller" />
+	<context:component-scan base-package="org.spring.todo.service" />
+	<context:component-scan base-package="org.spring.todo.dao" />
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 

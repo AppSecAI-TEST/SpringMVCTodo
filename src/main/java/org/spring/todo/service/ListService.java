@@ -1,11 +1,8 @@
-package org.spring.todo.dao;
-
+package org.spring.todo.service;
 
 import org.spring.todo.model.TodoList;
 
+public interface ListService {
 
-public interface ListDAO {
-	
 	public TodoList save(TodoList todoList);
-
 }
