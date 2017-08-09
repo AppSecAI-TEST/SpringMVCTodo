@@ -10,5 +10,7 @@
 </h1>
 
 <P>  The  ${serverTime}. </P>
+<p>My List</p>	
+	${list.content}
 </body>
 </html>

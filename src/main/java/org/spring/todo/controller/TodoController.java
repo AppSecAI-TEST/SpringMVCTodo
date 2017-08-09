@@ -6,6 +6,7 @@ import org.spring.todo.model.TodoList;
 import org.spring.todo.service.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -27,13 +28,14 @@ public class TodoController {
 	}
 	
 	@RequestMapping(value="viewtodo" ,method = RequestMethod.GET)
-	public String save(){
+	public String save(Model model){
 		logger.info("Method show() start");
 		TodoList todoList = new TodoList(); 
 		todoList.setContent("get milk yo");
 		todoList.setFlag(true);
 		listService.save(todoList);
 		logger.info("Method show() end");
+		model.addAttribute("list", todoList);
 		return "home";
 	}
 }
