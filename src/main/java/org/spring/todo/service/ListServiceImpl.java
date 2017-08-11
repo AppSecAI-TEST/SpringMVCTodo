@@ -19,9 +19,9 @@ public class ListServiceImpl implements ListService {
 	@Override
 	public TodoList save(TodoList todoList) {
 		logger.info("Method save service start");
+		
 		System.out.println(todoList);
-		logger.info("Method save service end");
-
+		
 		return listDao.save(todoList);
 		
 	}

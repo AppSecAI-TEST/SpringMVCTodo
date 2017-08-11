@@ -22,7 +22,6 @@ public class TodoController {
 	@RequestMapping("view")
 	public String showList(){
 		logger.info("Method showList()");
-//	Session session = sf.getCurrentSession();
 		return "home";
 		
 	}
@@ -30,11 +29,12 @@ public class TodoController {
 	@RequestMapping(value="viewtodo" ,method = RequestMethod.GET)
 	public String save(Model model){
 		logger.info("Method show() start");
+		
 		TodoList todoList = new TodoList(); 
 		todoList.setContent("get milk yo");
 		todoList.setFlag(true);
 		listService.save(todoList);
-		logger.info("Method show() end");
+		
 		model.addAttribute("list", todoList);
 		return "home";
 	}

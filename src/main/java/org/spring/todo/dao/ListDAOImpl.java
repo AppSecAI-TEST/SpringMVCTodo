@@ -23,9 +23,7 @@ public class ListDAOImpl implements ListDAO {
 	public TodoList save(TodoList todoList) {
 		logger.info("Method save dao start");
 
-		em.persist(todoList);
-		logger.info("Method save dao end");
-		
+		em.persist(todoList);		
 		em.flush();
 		
 		return todoList;
